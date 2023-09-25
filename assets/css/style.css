@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Inter:wght@400;500;600;700;800&family=Poppins:wght@200;300&display=swap');
+
+*:root{
+    --clr-title: rgb(255, 255, 255);
+    --clr-pink: #F9CEEE;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Dancing Script', cursive;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+.bg{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/backg2.svg);
+    background-size: cover;
+    z-index: -1;
+    animation: start 1s;
+}
+
+header{
+    height: 10vh;
+
+}
+
+nav{
+    margin-left: 2rem;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    /* gap: 1rem; */
+}
+
+a, .exerc1{
+    display: flex;
+    align-items: center;
+    padding: 0 .5rem;
+
+    font-size: .9rem;
+    text-decoration: none;
+    text-align: center;
+    color: var(--clr-title);
+    font-weight: bold;
+    transition: all .5s ease;
+}
+a:hover{
+    cursor: pointer;
+    padding: .5rem;
+    background-color: rgba(250,250,250,.1);
+}
+.exerc1 input:hover ~ a{
+    cursor: pointer;
+    padding: .5rem;
+    background-color: rgba(250,250,250,.1);
+
+}
+.exerc1{
+    position: relative;
+}
+.exerc1>input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+.dif-exe{
+    position: absolute;
+    top: 6vh;
+    height: auto;
+    opacity: 0;
+    transition: all .5s ease;
+}
+.dif-exe:focu{
+
+}
+.dif-exe a {
+    margin-bottom: .8rem;
+}
+
+.exerc1>input:checked ~ .dif-exe{
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+.orn{
+    position: absolute;
+    top: 10rem;
+    right: 10%;
+    width: 15%;
+    height: 5rem;
+    animation: transfig 1s ease infinite alternate;
+}
+.orn img{
+    width: 100%;
+    height: 100%;
+}
+main{
+    height: 85vh;
+    display: flex;
+    
+    
+}
+
+main section{
+    width: 50%;
+    height: 100%
+}
+main section div{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+main section div svg{
+    width: 90%;
+    height: 70%;
+    padding: 10% 5% 5% 5%; 
+}
+
+main section div::after{
+    width: 45%;
+    height: 2rem;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.2);
+    filter: blur(.3rem);
+    border-radius: 50%;
+    animation: reduc 4s infinite alternate;
+
+} 
+#svg1{
+    /* filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.411)); */
+    animation: transfig 4s ease infinite alternate;
+}
+
+#path18-7{
+    animation: transeye 6s  infinite alternate;
+    
+}
+
+#path18{
+    animation: transeye 6s  infinite alternate;
+}
+
+#path28, #path28-4, #path28-6, #path28-9{
+    animation-name: transfig1, opc;
+    animation-duration: 1s;
+    animation-timing-function: ease, ease-in;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    
+}
+
+#shadow{
+    animation: opc 4s infinite alternate;
+}
+main article{
+    margin-left: 5rem;
+    padding: 4rem;
+    font-family: 'Inter', sans-serif;
+    color: var(--clr-title);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 1rem;
+
+}
+main article h1{
+
+    font-size: 5rem;
+    font-weight: 800;
+
+    
+}
+
+main article p{
+   font-weight: bold;
+    
+}
+
+
+
+
+footer{
+    height: 5vh;
+
+}
+footer span{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: bold;
+}
+
+
+
+@keyframes transeye{
+    from{
+       /* transform: translateX(100%);*/
+       transform: translateX(0) translateY(0);
+    }
+    to{
+        /*transform: translateX(0%);*/
+        transform: translateX(7px) 
+    }
+}
+
+
+
+@keyframes transfig{
+    from{
+        transform: translateY(0px)
+    }
+    to{
+        transform: translateY(15px)
+    }
+}
+@keyframes transfig1{
+    from{
+        transform: translateY(0px)
+    }
+    to{
+        transform: translateY(6rem)
+    }
+}
+
+@keyframes transz{
+   from{
+
+   }
+   to{
+
+   }
+}
+
+@keyframes reduc{
+    from{
+       /* transform: translateX(100%);*/
+       transform: scaleX(.3);
+
+       
+    }
+
+    to{
+        /*transform: translateX(0%);*/
+        transform: scaleX(1);
+    }
+}
+
+
+@keyframes opc{
+    from{
+        /* transform: translateX(100%);*/
+        opacity: 1;
+     }
+     to{
+         /*transform: translateX(0%);*/
+         opacity: 0;
+ 
+     }
+
+}
+
+
+@keyframes start{
+    0%{
+        clip-path: circle(1.2% at 0 0);
+     }
+     100%{
+         /*transform: translateX(0%);*/
+        clip-path: circle(140.3% at 0 1%);
+ 
+     }
+
+}
