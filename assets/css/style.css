@@ -3,6 +3,7 @@
 *:root{
     --clr-title: rgb(255, 255, 255);
     --clr-pink: #F9CEEE;
+    --clr-purple: #E0CDFF;
 }
 *{
     margin: 0;
@@ -11,10 +12,8 @@
 }
 
 body{
-    font-family: 'Open Sans', sans-serif;
-    font-family: 'Dancing Script', cursive;
 
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .bg{
@@ -26,42 +25,52 @@ body{
     z-index: -1;
     animation: start 1s;
 }
-
+/*---------------------------------------------HEADER-----------------------------------------------------*/
 header{
     height: 10vh;
 
 }
 
 nav{
-    margin-left: 2rem;
+    margin-top: 2rem;
+    margin-right: 5rem;
     height: 100%;
     display: flex;
-    justify-content: start;
+    justify-content: end;
     align-items: center;
-    /* gap: 1rem; */
 }
 
-a, .exerc1{
-    display: flex;
-    align-items: center;
-    padding: 0 .3rem;
-
-    font-size: .9rem;
+a{
     text-decoration: none;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: var(--clr-title);
-    font-weight: bold;
-    transition: all .5s ease;
+    border-radius: 50%;
+    transition: all .5s ease-in-out;
 }
-a:hover{
-    cursor: pointer;
-    padding: .5rem;
-    background-color: rgba(250,250,250,.1);
+
+
+nav>a, .exerc1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto .3rem auto; 
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    text-shadow: 2px 1px 2px #272727;
+    background: rgb(224,205,255);
+    background: linear-gradient(90deg, rgba(224,205,255,1) 0%, rgba(249,206,238,1) 35%, rgba(193,240,251,1) 100%);
+    -moz-box-shadow: 0px 4px 0 #272727;
+    -webkit-box-shadow: 2px 4px 6px #272727;
+    transition: all .5s ease-in-out;
 }
-.exerc1 input:hover ~ a{
-    cursor: pointer;
-    padding: .5rem;
-    background-color: rgba(250,250,250,.1);
+
+.exerc1>a{
+    width: 100%;
+    height: 100%;
+    padding: .3rem;
 
 }
 .exerc1{
@@ -77,20 +86,24 @@ a:hover{
     cursor: pointer;
 }
 
-
 .dif-exe{
     position: absolute;
-
-    width: 100%;
     top: 6vh;
-    height: auto;
+    padding: .3rem;
     opacity: 0;
+    z-index: 10;
     transition: all .5s ease;
 }
 
 .dif-exe a {
-    display: block;
+    width: 2rem;
+    height: 2rem;
     margin-bottom: .8rem;
+    text-shadow: 2px 1px 2px #272727;
+    background: rgb(224,205,255);
+    background: linear-gradient(90deg, rgba(224,205,255,1) 0%, rgba(249,206,238,1) 35%, rgba(193,240,251,1) 100%);
+    -moz-box-shadow: 0px 4px 0 #272727;
+    -webkit-box-shadow: 2px 4px 6px #272727;
 }
 
 .exerc1>input:checked ~ .dif-exe{
@@ -98,6 +111,22 @@ a:hover{
 }
 
 
+a:hover, .exerc1:hover{
+    cursor: pointer;
+    width: 4rem;
+    padding: .4rem;
+    justify-content: start;
+    border-radius: 50px;
+    color: black;
+    text-shadow: 2px 1px 2px #dfdcdc;
+}
+
+
+.exerc1:hover>a{
+    justify-content: start;
+    color: black;
+    text-shadow: 2px 1px 2px #dfdcdc;
+}
 
 
 
@@ -105,10 +134,10 @@ a:hover{
 
 
 
-
+/*-------------------------------------------------MAIN----------------------------------------------------*/
 .orn{
     position: absolute;
-    top: 10rem;
+    top: 6rem;
     right: 10%;
     width: 15%;
     height: 5rem;
@@ -119,15 +148,19 @@ a:hover{
     height: 100%;
 }
 main{
+    position: absolute;
     height: 85vh;
     display: flex;
-    
+    z-index: -1;
     
 }
 
 main section{
+    margin: -2rem 0 0 5rem;
     width: 50%;
-    height: 100%
+    height: 100%;
+
+
 }
 main section div{
     height: 100%;
@@ -137,9 +170,9 @@ main section div{
     align-items: center;
 }
 main section div svg{
-    width: 90%;
-    height: 70%;
-    padding: 10% 5% 5% 5%; 
+    width: 100%;
+    height: 110%;
+    padding: 4% 5% 5% 5%; 
 }
 
 main section div::after{
@@ -153,17 +186,16 @@ main section div::after{
 
 } 
 #svg1{
-    /* filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.411)); */
     animation: transfig 4s ease infinite alternate;
 }
 
 #path18-7{
-    animation: transeye 6s  infinite alternate;
+    animation: transeye 4s  infinite alternate;
     
 }
 
 #path18{
-    animation: transeye 6s  infinite alternate;
+    animation: transeye 4s  infinite alternate;
 }
 
 #path28, #path28-4, #path28-6, #path28-9{
@@ -181,7 +213,6 @@ main section div::after{
 main article{
     margin-left: 5rem;
     padding: 4rem;
-    font-family: 'Inter', sans-serif;
     color: var(--clr-title);
     display: flex;
     flex-direction: column;
@@ -203,12 +234,15 @@ main article p{
     
 }
 
-
+/*----------------------------------------------------FOOTER-----------------------------------------------*/
 
 
 footer{
+    position: absolute;
+    width: 100%;
+    top: 95vh;
     height: 5vh;
-
+    
 }
 footer span{
     height: 100%;
@@ -221,18 +255,17 @@ footer span{
 
 
 
+
+/*------------------------------------------------ANIMATION---------------------------------------------------*/
+
 @keyframes transeye{
     from{
-       /* transform: translateX(100%);*/
-       transform: translateX(0) translateY(0);
+       transform: translateX(0);
     }
     to{
-        /*transform: translateX(0%);*/
         transform: translateX(7px) 
     }
 }
-
-
 
 @keyframes transfig{
     from{
@@ -251,50 +284,31 @@ footer span{
     }
 }
 
-@keyframes transz{
-   from{
-
-   }
-   to{
-
-   }
-}
-
 @keyframes reduc{
     from{
-       /* transform: translateX(100%);*/
-       transform: scaleX(.3);
-
-       
+       transform: scaleX(.3);       
     }
-
     to{
-        /*transform: translateX(0%);*/
         transform: scaleX(1);
     }
 }
 
-
 @keyframes opc{
     from{
-        /* transform: translateX(100%);*/
         opacity: 1;
      }
      to{
-         /*transform: translateX(0%);*/
          opacity: 0;
  
      }
 
 }
 
-
 @keyframes start{
     0%{
         clip-path: circle(1.2% at 0 0);
      }
      100%{
-         /*transform: translateX(0%);*/
         clip-path: circle(140.3% at 0 1%);
  
      }
