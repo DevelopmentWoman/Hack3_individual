@@ -16,244 +16,1007 @@ body{
     font-family: 'Inter', sans-serif;
 }
 
-.bg{
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    background-image: url(../images/backg2.svg);
-    background-size: cover;
-    z-index: -1;
-    animation: start 1s;
-}
-/*---------------------------------------------HEADER-----------------------------------------------------*/
-header{
-    height: 10vh;
-
-}
-
-nav{
-    margin-top: 2rem;
-    margin-right: 5rem;
-    height: 100%;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-}
-
-a{
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--clr-title);
-    border-radius: 50%;
-    transition: all .5s ease-in-out;
-}
-
-
-nav>a, .exerc1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto .3rem auto; 
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    text-shadow: 2px 1px 2px #272727;
-    background: rgb(224,205,255);
-    background: linear-gradient(90deg, rgba(224,205,255,1) 0%, rgba(249,206,238,1) 35%, rgba(193,240,251,1) 100%);
-    -moz-box-shadow: 0px 4px 0 #272727;
-    -webkit-box-shadow: 2px 4px 6px #272727;
-    transition: all .5s ease-in-out;
-}
-
-.exerc1>a{
-    width: 100%;
-    height: 100%;
-    padding: .3rem;
-
-}
-.exerc1{
-    position: relative;
-}
-.exerc1>input{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.dif-exe{
-    position: absolute;
-    top: 6vh;
-    padding: .3rem;
-    opacity: 0;
-    z-index: 10;
-    transition: all .5s ease;
-}
-
-.dif-exe a {
-    width: 2rem;
-    height: 2rem;
-    margin-bottom: .8rem;
-    text-shadow: 2px 1px 2px #272727;
-    background: rgb(224,205,255);
-    background: linear-gradient(90deg, rgba(224,205,255,1) 0%, rgba(249,206,238,1) 35%, rgba(193,240,251,1) 100%);
-    -moz-box-shadow: 0px 4px 0 #272727;
-    -webkit-box-shadow: 2px 4px 6px #272727;
-}
-
-.exerc1>input:checked ~ .dif-exe{
-    opacity: 1;
-}
-
-
-a:hover, .exerc1:hover{
-    cursor: pointer;
-    width: 4rem;
-    padding: .4rem;
-    justify-content: start;
-    border-radius: 50px;
-    color: black;
-    text-shadow: 2px 1px 2px #dfdcdc;
-}
-
-
-.exerc1:hover>a{
-    justify-content: start;
-    color: black;
-    text-shadow: 2px 1px 2px #dfdcdc;
-}
 
 
 
+@media (min-width: 375px)  {
+
+    /*-------------------------------------------BACKGROUND-------------------------------------------------*/
+    .bg{
+        position: absolute;
+        height: 100vh;
+        width: 100%;
+        background-image: url(../images/backg_mobile.svg);
+        background-size: cover;
+        z-index: -1;
+        animation: start 1s;
+        overflow: hidden;
+    }
+
+    /*---------------------------------------------HEADER-----------------------------------------------------*/
+    header{
+        height: 60vh;
+        width: 30%;
+    }
+    header::before{
+        position: absolute;    
+        clip-path: circle(99.4% at 0 0);
+        width: 3rem;
+        height: 3rem;
+        content: url("/assets/images/menu.svg");
+        z-index: -1;
+     }
+
+     input[type='checkbox']{
+        width: 2rem;
+        height: 3rem;
+        opacity: 0;
+     }
+
+     input[type='checkbox']:checked ~ nav{
+        transform: translateX(0);
+     }
+    nav{
+        margin-top: 2.5rem;
+        padding: 2rem 0;
+        height: 100%;
+        background: rgba(224,205,255,.2);
+        background: linear-gradient(180deg, rgba(193,240,251,.4)  0%, rgba(249,206,238,.4) 35%, rgba(224,205,255,.4) 100%);
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        /* justify-content: end; */
+        align-items: center;
+        transform: translateX(-100%);
+        transition: all 1s ease;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+
+    a{
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--clr-title);
+        transition: all .5s ease-in-out;
+    }
+
+
+    nav>a, .exerc1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto .3rem auto; 
+        /* background: rgba(224,205,255,.2);
+        background: linear-gradient(180deg, rgba(193,240,251,.4)  0%, rgba(249,206,238,.4) 35%, rgba(224,205,255,.4) 100%); */
+        width: 4rem;
+        height: 2rem;
+        border-radius: 30px;
+        -moz-box-shadow: 0px 4px 0 #272727;
+        -webkit-box-shadow: 2px 4px 6px #272727;
+        transition: all .5s ease-in-out;
+    }
+
+    .exerc1>a{
+        width: 100%;
+        height: 100%;
+        padding: .3rem;
+    }
+    .exerc1{
+        position: relative;
+    }
+    .exerc1>input{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        cursor: pointer;
+    }
+    .dif-exe{
+        position: absolute;
+        display: flex;
+        left: 6rem;
+        padding: .3rem;
+        gap: .3rem;
+        transform: translateX(-150%);
+        opacity: 0;
+        z-index: 10;
+        transition: all .5s ease;
+    }
+
+    .dif-exe a {
+        width: 4rem;
+        height: 2rem;
+        text-shadow: 2px 1px 2px #272727;
+        border-radius: 30px;
+        -moz-box-shadow: 0px 4px 0 #272727;
+        -webkit-box-shadow: 2px 4px 6px #272727;
+    }
+
+    .exerc1>input:checked ~ .dif-exe{
+        opacity: 1;
+        transform: translateX(0);
+        transition: all .5s ease;
+    }
+
+
+    a:hover, .exerc1:hover{
+        cursor: pointer;
+        padding: .4rem;
+        color: black;
+        font-weight: bold;
+        text-shadow: 2px 1px 2px #dfdcdc;
+    }
+
+
+    .exerc1:hover>a{
+        font-weight: bold;
+        color: black;
+        text-shadow: 2px 1px 2px #dfdcdc;
+    }
 
 
 
 
-/*-------------------------------------------------MAIN----------------------------------------------------*/
-.orn{
-    position: absolute;
-    top: 6rem;
-    right: 10%;
-    width: 15%;
-    height: 5rem;
-    animation: transfig 1s ease infinite alternate;
-}
-.orn img{
-    width: 100%;
-    height: 100%;
-}
-main{
-    position: absolute;
-    height: 85vh;
-    display: flex;
-    z-index: -1;
-    
-}
-
-main section{
-    margin: -2rem 0 0 5rem;
-    width: 50%;
-    height: 100%;
 
 
-}
-main section div{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-main section div svg{
-    width: 100%;
-    height: 110%;
-    padding: 4% 5% 5% 5%; 
-}
 
-main section div::after{
-    width: 45%;
-    height: 2rem;
-    content: "";
-    background-color: rgba(0, 0, 0, 0.2);
-    filter: blur(.3rem);
-    border-radius: 50%;
-    animation: reduc 4s infinite alternate;
+    /*-------------------------------------------------MAIN----------------------------------------------------*/
+    .orn{
+        position: absolute;
+        top: 6rem;
+        right: 10%;
+        width: 15%;
+        height: 5rem;
+        animation: transfig 1s ease infinite alternate;
+    }
+    .orn img{
+        width: 100%;
+        height: 100%;
+    }
+    main{
+        position: absolute;
+        height: 85vh;
+        display: flex;
+        z-index: -1;
+        
+    }
 
-} 
-#svg1{
-    animation: transfig 4s ease infinite alternate;
-}
-
-#path18-7{
-    animation: transeye 4s  infinite alternate;
-    
-}
-
-#path18{
-    animation: transeye 4s  infinite alternate;
-}
-
-#path28, #path28-4, #path28-6, #path28-9{
-    animation-name: transfig1, opc;
-    animation-duration: 1s;
-    animation-timing-function: ease, ease-in;
-    animation-fill-mode: both;
-    animation-iteration-count: infinite;
-    
-}
-
-#shadow{
-    animation: opc 4s infinite alternate;
-}
-main article{
-    margin-left: 5rem;
-    padding: 4rem;
-    color: var(--clr-title);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    gap: 1rem;
-
-}
-main article h1{
-
-    font-size: 5rem;
-    font-weight: 800;
-
-    
-}
-
-main article p{
-   font-weight: bold;
-    
-}
-
-/*----------------------------------------------------FOOTER-----------------------------------------------*/
+    main section{
+        margin: -2rem 0 0 5rem;
+        width: 50%;
+        height: 100%;
 
 
-footer{
-    position: absolute;
-    width: 100%;
-    top: 95vh;
-    height: 5vh;
-    
-}
-footer span{
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgba(255, 255, 255, 0.9);
+    }
+    main section div{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    main section div svg{
+        width: 100%;
+        height: 110%;
+        padding: 4% 5% 5% 5%; 
+    }
+
+    main section div::after{
+        width: 45%;
+        height: 2rem;
+        content: "";
+        background-color: rgba(0, 0, 0, 0.2);
+        filter: blur(.3rem);
+        border-radius: 50%;
+        animation: reduc 4s infinite alternate;
+
+    } 
+    #svg1{
+        animation: transfig 4s ease infinite alternate;
+    }
+
+    #path18-7{
+        animation: transeye 4s  infinite alternate;
+        
+    }
+
+    #path18{
+        animation: transeye 4s  infinite alternate;
+    }
+
+    #path28, #path28-4, #path28-6, #path28-9{
+        animation-name: transfig1, opc;
+        animation-duration: 1s;
+        animation-timing-function: ease, ease-in;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+        
+    }
+
+    #shadow{
+        animation: opc 4s infinite alternate;
+    }
+    main article{
+        margin-left: 5rem;
+        padding: 4rem;
+        color: var(--clr-title);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 1rem;
+
+    }
+    main article h1{
+
+        font-size: 5rem;
+        font-weight: 800;
+
+        
+    }
+
+    main article p{
     font-weight: bold;
+        
+    }
+
+    /*----------------------------------------------------FOOTER-----------------------------------------------*/
+
+
+    footer{
+        position: absolute;
+        width: 100%;
+        top: 95vh;
+        height: 5vh;
+        
+    }
+    footer span{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.9);
+        font-weight: bold;
+    }
+
+
 }
 
 
+
+
+
+
+
+@media (min-width: 768px) {
+
+    .bg{
+        background-image: url(../images/backg2.svg);
+
+    }
+    /*---------------------------------------------HEADER-----------------------------------------------------*/
+    header{
+        height: 10vh;
+
+    }
+
+    nav{
+        margin-top: 2rem;
+        margin-right: 5rem;
+        height: 100%;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+
+    a{
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--clr-title);
+        border-radius: 50%;
+        transition: all .5s ease-in-out;
+    }
+
+
+    nav>a, .exerc1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto .3rem auto; 
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        text-shadow: 2px 1px 2px #272727;
+        background: rgb(224,205,255);
+        background: linear-gradient(90deg, rgba(224,205,255,1) 0%, rgba(249,206,238,1) 35%, rgba(193,240,251,1) 100%);
+        -moz-box-shadow: 0px 4px 0 #272727;
+        -webkit-box-shadow: 2px 4px 6px #272727;
+        transition: all .5s ease-in-out;
+    }
+
+    .exerc1>a{
+        width: 100%;
+        height: 100%;
+        padding: .3rem;
+
+    }
+    .exerc1{
+        position: relative;
+    }
+    .exerc1>input{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .dif-exe{
+        position: absolute;
+        top: 6vh;
+        padding: .3rem;
+        opacity: 0;
+        z-index: 10;
+        transition: all .5s ease;
+    }
+
+    .dif-exe a {
+        width: 2rem;
+        height: 2rem;
+        margin-bottom: .8rem;
+        text-shadow: 2px 1px 2px #272727;
+        background: rgb(224,205,255);
+        background: linear-gradient(90deg, rgba(224,205,255,1) 0%, rgba(249,206,238,1) 35%, rgba(193,240,251,1) 100%);
+        -moz-box-shadow: 0px 4px 0 #272727;
+        -webkit-box-shadow: 2px 4px 6px #272727;
+    }
+
+    .exerc1>input:checked ~ .dif-exe{
+        opacity: 1;
+    }
+
+
+    a:hover, .exerc1:hover{
+        cursor: pointer;
+        width: 4rem;
+        padding: .4rem;
+        justify-content: start;
+        border-radius: 50px;
+        color: black;
+        text-shadow: 2px 1px 2px #dfdcdc;
+    }
+
+
+    .exerc1:hover>a{
+        justify-content: start;
+        color: black;
+        text-shadow: 2px 1px 2px #dfdcdc;
+    }
+
+
+
+
+
+
+
+    /*-------------------------------------------------MAIN----------------------------------------------------*/
+    .orn{
+        position: absolute;
+        top: 6rem;
+        right: 10%;
+        width: 15%;
+        height: 5rem;
+        animation: transfig 1s ease infinite alternate;
+    }
+    .orn img{
+        width: 100%;
+        height: 100%;
+    }
+    main{
+        position: absolute;
+        height: 85vh;
+        display: flex;
+        z-index: -1;
+        
+    }
+
+    main section{
+        margin: -2rem 0 0 5rem;
+        width: 50%;
+        height: 100%;
+
+
+    }
+    main section div{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    main section div svg{
+        width: 100%;
+        height: 110%;
+        padding: 4% 5% 5% 5%; 
+    }
+
+    main section div::after{
+        width: 45%;
+        height: 2rem;
+        content: "";
+        background-color: rgba(0, 0, 0, 0.2);
+        filter: blur(.3rem);
+        border-radius: 50%;
+        animation: reduc 4s infinite alternate;
+
+    } 
+    #svg1{
+        animation: transfig 4s ease infinite alternate;
+    }
+
+    #path18-7{
+        animation: transeye 4s  infinite alternate;
+        
+    }
+
+    #path18{
+        animation: transeye 4s  infinite alternate;
+    }
+
+    #path28, #path28-4, #path28-6, #path28-9{
+        animation-name: transfig1, opc;
+        animation-duration: 1s;
+        animation-timing-function: ease, ease-in;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+        
+    }
+
+    #shadow{
+        animation: opc 4s infinite alternate;
+    }
+    main article{
+        margin-left: 5rem;
+        padding: 4rem;
+        color: var(--clr-title);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 1rem;
+
+    }
+    main article h1{
+
+        font-size: 5rem;
+        font-weight: 800;
+
+        
+    }
+
+    main article p{
+    font-weight: bold;
+        
+    }
+
+    /*----------------------------------------------------FOOTER-----------------------------------------------*/
+
+
+    footer{
+        position: absolute;
+        width: 100%;
+        top: 95vh;
+        height: 5vh;
+        
+    }
+    footer span{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.9);
+        font-weight: bold;
+    }
+
+
+
+
+}
+
+@media (min-width: 992px) {
+
+    .bg{
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background-image: url(../images/backg2.svg);
+        background-size: cover;
+        z-index: -1;
+        animation: start 1s;
+    }
+    /*---------------------------------------------HEADER-----------------------------------------------------*/
+    header{
+        height: 10vh;
+
+    }
+
+    nav{
+        margin-top: 2rem;
+        margin-right: 5rem;
+        height: 100%;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+
+    a{
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--clr-title);
+        border-radius: 50%;
+        transition: all .5s ease-in-out;
+    }
+
+
+    nav>a, .exerc1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto .3rem auto; 
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        text-shadow: 2px 1px 2px #272727;
+        background: rgb(224,205,255);
+        background: linear-gradient(90deg, rgba(224,205,255,1) 0%, rgba(249,206,238,1) 35%, rgba(193,240,251,1) 100%);
+        -moz-box-shadow: 0px 4px 0 #272727;
+        -webkit-box-shadow: 2px 4px 6px #272727;
+        transition: all .5s ease-in-out;
+    }
+
+    .exerc1>a{
+        width: 100%;
+        height: 100%;
+        padding: .3rem;
+
+    }
+    .exerc1{
+        position: relative;
+    }
+    .exerc1>input{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .dif-exe{
+        position: absolute;
+        top: 6vh;
+        padding: .3rem;
+        opacity: 0;
+        z-index: 10;
+        transition: all .5s ease;
+    }
+
+    .dif-exe a {
+        width: 2rem;
+        height: 2rem;
+        margin-bottom: .8rem;
+        text-shadow: 2px 1px 2px #272727;
+        background: rgb(224,205,255);
+        background: linear-gradient(90deg, rgba(224,205,255,1) 0%, rgba(249,206,238,1) 35%, rgba(193,240,251,1) 100%);
+        -moz-box-shadow: 0px 4px 0 #272727;
+        -webkit-box-shadow: 2px 4px 6px #272727;
+    }
+
+    .exerc1>input:checked ~ .dif-exe{
+        opacity: 1;
+    }
+
+
+    a:hover, .exerc1:hover{
+        cursor: pointer;
+        width: 4rem;
+        padding: .4rem;
+        justify-content: start;
+        border-radius: 50px;
+        color: black;
+        text-shadow: 2px 1px 2px #dfdcdc;
+    }
+
+
+    .exerc1:hover>a{
+        justify-content: start;
+        color: black;
+        text-shadow: 2px 1px 2px #dfdcdc;
+    }
+
+
+
+
+
+
+
+    /*-------------------------------------------------MAIN----------------------------------------------------*/
+    .orn{
+        position: absolute;
+        top: 6rem;
+        right: 10%;
+        width: 15%;
+        height: 5rem;
+        animation: transfig 1s ease infinite alternate;
+    }
+    .orn img{
+        width: 100%;
+        height: 100%;
+    }
+    main{
+        position: absolute;
+        height: 85vh;
+        display: flex;
+        z-index: -1;
+        
+    }
+
+    main section{
+        margin: -2rem 0 0 5rem;
+        width: 50%;
+        height: 100%;
+
+
+    }
+    main section div{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    main section div svg{
+        width: 100%;
+        height: 110%;
+        padding: 4% 5% 5% 5%; 
+    }
+
+    main section div::after{
+        width: 45%;
+        height: 2rem;
+        content: "";
+        background-color: rgba(0, 0, 0, 0.2);
+        filter: blur(.3rem);
+        border-radius: 50%;
+        animation: reduc 4s infinite alternate;
+
+    } 
+    #svg1{
+        animation: transfig 4s ease infinite alternate;
+    }
+
+    #path18-7{
+        animation: transeye 4s  infinite alternate;
+        
+    }
+
+    #path18{
+        animation: transeye 4s  infinite alternate;
+    }
+
+    #path28, #path28-4, #path28-6, #path28-9{
+        animation-name: transfig1, opc;
+        animation-duration: 1s;
+        animation-timing-function: ease, ease-in;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+        
+    }
+
+    #shadow{
+        animation: opc 4s infinite alternate;
+    }
+    main article{
+        margin-left: 5rem;
+        padding: 4rem;
+        color: var(--clr-title);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 1rem;
+
+    }
+    main article h1{
+
+        font-size: 5rem;
+        font-weight: 800;
+
+        
+    }
+
+    main article p{
+    font-weight: bold;
+        
+    }
+
+    /*----------------------------------------------------FOOTER-----------------------------------------------*/
+
+
+    footer{
+        position: absolute;
+        width: 100%;
+        top: 95vh;
+        height: 5vh;
+        
+    }
+    footer span{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.9);
+        font-weight: bold;
+    }
+
+
+
+
+}
+@media (min-width: 1200px) {
+
+    .bg{
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background-image: url(../images/backg2.svg);
+        background-size: cover;
+        z-index: -1;
+        animation: start 1s;
+    }
+    /*---------------------------------------------HEADER-----------------------------------------------------*/
+    header{
+        height: 10vh;
+
+    }
+
+    nav{
+        margin-top: 2rem;
+        margin-right: 5rem;
+        height: 100%;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+
+    a{
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--clr-title);
+        border-radius: 50%;
+        transition: all .5s ease-in-out;
+    }
+
+
+    nav>a, .exerc1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto .3rem auto; 
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        text-shadow: 2px 1px 2px #272727;
+        background: rgb(224,205,255);
+        background: linear-gradient(90deg, rgba(224,205,255,1) 0%, rgba(249,206,238,1) 35%, rgba(193,240,251,1) 100%);
+        -moz-box-shadow: 0px 4px 0 #272727;
+        -webkit-box-shadow: 2px 4px 6px #272727;
+        transition: all .5s ease-in-out;
+    }
+
+    .exerc1>a{
+        width: 100%;
+        height: 100%;
+        padding: .3rem;
+
+    }
+    .exerc1{
+        position: relative;
+    }
+    .exerc1>input{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .dif-exe{
+        position: absolute;
+        top: 6vh;
+        padding: .3rem;
+        opacity: 0;
+        z-index: 10;
+        transition: all .5s ease;
+    }
+
+    .dif-exe a {
+        width: 2rem;
+        height: 2rem;
+        margin-bottom: .8rem;
+        text-shadow: 2px 1px 2px #272727;
+        background: rgb(224,205,255);
+        background: linear-gradient(90deg, rgba(224,205,255,1) 0%, rgba(249,206,238,1) 35%, rgba(193,240,251,1) 100%);
+        -moz-box-shadow: 0px 4px 0 #272727;
+        -webkit-box-shadow: 2px 4px 6px #272727;
+    }
+
+    .exerc1>input:checked ~ .dif-exe{
+        opacity: 1;
+    }
+
+
+    a:hover, .exerc1:hover{
+        cursor: pointer;
+        width: 4rem;
+        padding: .4rem;
+        justify-content: start;
+        border-radius: 50px;
+        color: black;
+        text-shadow: 2px 1px 2px #dfdcdc;
+    }
+
+
+    .exerc1:hover>a{
+        justify-content: start;
+        color: black;
+        text-shadow: 2px 1px 2px #dfdcdc;
+    }
+
+
+
+
+
+
+
+    /*-------------------------------------------------MAIN----------------------------------------------------*/
+    .orn{
+        position: absolute;
+        top: 6rem;
+        right: 10%;
+        width: 15%;
+        height: 5rem;
+        animation: transfig 1s ease infinite alternate;
+    }
+    .orn img{
+        width: 100%;
+        height: 100%;
+    }
+    main{
+        position: absolute;
+        height: 85vh;
+        display: flex;
+        z-index: -1;
+        
+    }
+
+    main section{
+        margin: -2rem 0 0 5rem;
+        width: 50%;
+        height: 100%;
+
+
+    }
+    main section div{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    main section div svg{
+        width: 100%;
+        height: 110%;
+        padding: 4% 5% 5% 5%; 
+    }
+
+    main section div::after{
+        width: 45%;
+        height: 2rem;
+        content: "";
+        background-color: rgba(0, 0, 0, 0.2);
+        filter: blur(.3rem);
+        border-radius: 50%;
+        animation: reduc 4s infinite alternate;
+
+    } 
+    #svg1{
+        animation: transfig 4s ease infinite alternate;
+    }
+
+    #path18-7{
+        animation: transeye 4s  infinite alternate;
+        
+    }
+
+    #path18{
+        animation: transeye 4s  infinite alternate;
+    }
+
+    #path28, #path28-4, #path28-6, #path28-9{
+        animation-name: transfig1, opc;
+        animation-duration: 1s;
+        animation-timing-function: ease, ease-in;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+        
+    }
+
+    #shadow{
+        animation: opc 4s infinite alternate;
+    }
+    main article{
+        margin-left: 5rem;
+        padding: 4rem;
+        color: var(--clr-title);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 1rem;
+
+    }
+    main article h1{
+
+        font-size: 5rem;
+        font-weight: 800;
+
+        
+    }
+
+    main article p{
+    font-weight: bold;
+        
+    }
+
+    /*----------------------------------------------------FOOTER-----------------------------------------------*/
+
+
+    footer{
+        position: absolute;
+        width: 100%;
+        top: 95vh;
+        height: 5vh;
+        
+    }
+    footer span{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.9);
+        font-weight: bold;
+    }
+
+
+
+
+}
 
 
 /*------------------------------------------------ANIMATION---------------------------------------------------*/
