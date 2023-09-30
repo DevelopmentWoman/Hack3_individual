@@ -40,7 +40,7 @@ body{
     }
     header::before{
         position: absolute;
-        left: 15%; 
+        left: 12%; 
         /* clip-path: circle(99.4% at 0 0); */
         clip-path: polygon(0 0, 100% 0%, 100% 49%, 55% 100%, 0% 50%);
         width: 3rem;
@@ -51,7 +51,7 @@ body{
      }
 
      header>input[type='checkbox']{
-        margin-left: 45%;
+        margin-left: 35%;
         width: 3rem;
         height: 3rem;
         opacity: 0;
@@ -174,7 +174,7 @@ body{
     /*-------------------------------------------------MAIN----------------------------------------------------*/
     .orn{
         position: absolute;
-        top: 3rem;
+        top: 25rem;
         right: 2rem;
         width: 15%;
         height: 5rem;
@@ -258,21 +258,25 @@ body{
         color: var(--clr-title);
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
         gap: 1rem;
 
     }
     main article h1{
-
+    
         font-size: 4rem;
         font-weight: 800;
 
 
     }
 
+    main article h2{
+        text-align: center;
+    }
+
     main article p{
-    font-weight: bold;
+        text-align: justify;
+        font-weight: bold;
 
     }
 
@@ -281,16 +285,22 @@ body{
 
     footer{
         position: absolute;
-        width: 100%;
-        top: 95vh;
-        height: 5vh;
-
+        width: 90%;
+        left: 5%;
+        top: 90vh;
+        bottom: 5vh;
+        height: 10vh;
+        background: rgba(255, 255, 255, 0.05);
+        -webkit-backdrop-filter: blur(1rem);
+        backdrop-filter: blur(1rem);
+        /* background-color: rgba(255,255,255,.5); */
+        /* filter: blur(1rem); */
     }
     footer span{
         height: 100%;
         display: flex;
-        justify-content: center;
         align-items: center;
+        text-align: center;
         color: rgba(255, 255, 255, 0.9);
         font-size: .8rem;
         font-weight: bold;
